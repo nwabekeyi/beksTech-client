@@ -1,0 +1,139 @@
+.Hero {
+    background: linear-gradient(180deg, #161418, #0a080c 40%);
+    padding: 200px 80px 110px 80px;
+}
+
+.heroBlock::before,
+.Block.featuresBlock::before,
+.Block.solutionsBlock::before,
+.Block.joinBlock::before {
+    background: linear-gradient(to top, #161418, transparent);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    bottom: 0%;
+    left: 0%;
+}
+
+.Block.featuresBlock::before {
+    height: 500px;
+}
+
+.subHead {
+    color: #998afb;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.heading {
+    font-size: 64px;
+    margin-top: 25px;
+    font-weight: 550;
+    line-height: 1.05em;
+}
+
+.blockHeading {
+    font-size: 48px;
+}
+
+.desc {
+    color: grey;
+    font-weight: 550;
+    max-width: 635px;
+    font-size: 18px;
+    line-height: 1.5em;
+    margin: 18px 0px;
+}
+
+.blockDesc {
+    margin: 18px 0px 0px 0px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 18px;
+}
+
+.links.soonLinks {
+    justify-content: initial;
+}
+
+.heroImg {
+    display: flex;
+    position: relative;
+    max-width: 1100px;
+    margin: 90px 0px;
+}
+
+.heroImg.soonImg {
+    max-width: 100%;
+}
+
+.heroImg::before {
+    background: linear-gradient(to top, #0a080c, transparent);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0%;
+    left: 0%;
+}
+
+.heroImg img {
+    width: 100%;
+}
+
+.logos div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 35px;
+    gap: 65px;
+}
+
+.logos div img {
+    width: 130px;
+}
+
+@media(max-width: 980px) {
+    .heading {
+        font-size: 55px;
+    }
+}
+
+@media(max-width: 900px) {
+    .logos div {
+        gap: 45px;
+    }
+
+    .logos div img {
+        width: 115px;
+    }
+}
+
+@media(max-width: 670px) {
+    .heading {
+        font-size: 45px;
+    }
+
+    .Hero {
+        padding: 200px 50px 110px 50px;
+    }
+}
+
+@media(max-width: 500px) {
+    .heading {
+        font-size: 40px;
+    }
+}
+
+@media(max-width: 460px) {
+    .Hero {
+        padding: 200px 35px 110px 35px;
+    }
+}

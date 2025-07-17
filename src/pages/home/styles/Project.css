@@ -1,0 +1,71 @@
+.Block {
+  position: relative;
+  margin: 0 auto;
+  padding: 110px 80px;
+  background-color: #0a080c;
+  color: white;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+
+.projectCard {
+  background-color: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 1rem;
+  padding: 30px;
+  box-shadow: 0 4px 8px #00000020;
+  transition: transform 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: scale(1.05);
+}
+
+.projectTitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.projectDesc {
+  color: #d4d4d8;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  line-height: 1.6em;
+}
+
+.projectTech {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 12px;
+}
+
+.projectLink {
+  color: #693def;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.projectLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 670px) {
+  .Block {
+    padding: 110px 50px;
+  }
+}
+
+@media (max-width: 460px) {
+  .Block {
+    padding: 110px 35px;
+  }
+}
