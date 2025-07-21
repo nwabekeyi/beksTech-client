@@ -15,7 +15,7 @@ function Footer() {
                             <img src="/beks_white.png" alt="logo" style={{ width: 120 }} />
                         </a>
                         <span>
-                            We are a technology-driven company offering website and app development, tech consulting, digital training, and customized tech solutions for businesses, schools, and individuals.
+                            BeksTech is a technology-driven company offering website and app development, tech consulting, digital training, and customized tech solutions for businesses, schools, and individuals.
                         </span>
                     </div>
                     <div className='footerLinks'>

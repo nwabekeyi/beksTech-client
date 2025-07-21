@@ -12,7 +12,7 @@ function Solutions() {
             <div className="sectionHead">
                 <p className='subHead'>Solutions</p>
                 <p className="heading blockHeading" style={{ maxWidth: "420px" }}>Tech Solutions for Every Need</p>
-                <p className="desc blockDesc" style={{ maxWidth: "520px" }}>From website and app development to digital training and IT consulting, we provide tailored solutions for businesses, schools, and individuals looking to grow and succeed with technology.</p>
+                <p className="desc blockDesc" style={{ maxWidth: "520px" }}>From website and app development to digital training and IT consulting, BeksTech provide tailored solutions for businesses, schools, and individuals looking to grow and succeed with technology.</p>
             </div>
 
             <div className="solutions">
