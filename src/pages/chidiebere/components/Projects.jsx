@@ -1,49 +1,49 @@
-import React from "react";
+import React from "react"; 
 import "../../home/styles/Project.css";
 
 function Projects() {
   const projects = [
     {
       title: "Smart Airs",
-      description:
-        "Smart Airs aims to provide a seamless and efficient solution for users to manage their taxes.",
+      image: "/project/smart.png",
+      description: "Smart Airs aims to provide a seamless and efficient solution for users to manage their taxes.",
       tech: "React | ExpressJs",
-      link: "#",
+      link: "https://smartairs.tax/",
     },
     {
       title: "Maxcoin",
-      description:
-        "MaxCoin is a web-based cryptocurrency platform designed to offer users an easy and secure way to trade and manage digital assets.",
+      image: "/project/max.png",
+      description: "MaxCoin is a web-based cryptocurrency platform designed to offer users an easy and secure way to trade and manage digital assets.",
       tech: "ExpressJs | MySQL",
-      link: "#",
+      link: "https://support.maicoin.com/en/support/home",
     },
     {
       title: "Pesrichi Brown website",
-      description:
-        "Pesrichi brown is a website for a tech supplying firm that sells various building interior fittings and cabinets.",
+      image: "/project/pesrichi.png",
+      description: "Pesrichi brown is a website for a tech supplying firm that sells various building interior fittings and cabinets.",
       tech: "Wordpress",
-      link: "#",
+      link: "https://pesbrownrichi.org/",
     },
     {
-      title: "Lendsqr",
-      description:
-        "Lendsqr is a loan management dashboard using React, designed to facilitate loan applications and track loan statuses.",
-      tech: "React | SCSS",
-      link: "#",
+      title: "Crystal Land Academy",
+      image: "/project/crystal.png",
+      description: "Lendsqr is a loan management dashboard using React, designed to facilitate loan applications and track loan statuses.",
+      tech: "React | Expressjs| Mongodb | VPS hosting",
+      link: "http://crystallandacademy.com",
     },
     {
-      title: "Babtech e-learning (on-going)",
-      description:
-        "BabTech e-learning app, built with Firebase and React, offers a seamless online learning experience with tech courses.",
-      tech: "React | Firebase",
-      link: "#",
+      title: "CL3F Wilson",
+      image: "/project/cw.png",
+      description: "BabTech e-learning app, built with Firebase and React, offers a seamless online learning experience with tech courses.",
+      tech: "React | Firebase | Expressjs | Mysql",
+      link: "http://cl3fwilson.com",
     },
     {
-      title: "Trust Market (on-going)",
-      description:
-        "Trust Market is a web app built with React and Node.js, offering dynamic product listings.",
-      tech: "React | ExpressJs | MongoDB",
-      link: "#",
+      title: "Resolve (on-going)",
+      image: "/project/resolve.png",
+      description: "Trust Market is a web app built with React and Node.js, offering dynamic product listings.",
+      tech: "Nextjs | Prisma | Postgres",
+      link: "https://resolve-web-app-dev.vercel.app/login",
     },
   ];
 
@@ -57,6 +57,9 @@ function Projects() {
         {projects.map((project, index) => (
           <div key={index} className="projectCard">
             <h3 className="projectTitle">{project.title}</h3>
+            <div className="projectImageWrapper">
+              <img src={project.image} alt={`${project.title} screenshot`} className="projectImage" />
+            </div>
             <p className="projectDesc">{project.description}</p>
             <p className="projectTech">{project.tech}</p>
             <a

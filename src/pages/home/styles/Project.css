@@ -14,6 +14,19 @@
   margin: 0 auto;
   margin-top: 60px;
 }
+.projectImageWrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .projectCard {
   background-color: #18181b;

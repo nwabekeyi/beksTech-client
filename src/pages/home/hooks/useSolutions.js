@@ -5,12 +5,12 @@ const useSolutions = () => {
         {
             img: "/solutions/web (2).jpg",
             title: "Web & App Development",
-            description: "We build custom websites and mobile applications that are fast, responsive, and tailored to meet your business or organizational goals."
+            description: "BeksTech build custom websites and mobile applications that are fast, responsive, and tailored to meet your business or organizational goals."
         },
         {
             img: "/solutions/training.jpg",
             title: "Tech Training & Capacity Building",
-            description: "We offer hands-on tech training for students, businesses, and individuals—covering coding, design, digital skills, and more."
+            description: "BeksTech offer hands-on tech training for students, businesses, and individuals—covering coding, design, digital skills, and more."
         },
         {
             img: "/solutions/pen-4337521_640.jpg",
