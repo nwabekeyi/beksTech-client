@@ -1,51 +1,27 @@
-import React from "react"; 
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "../../home/styles/Project.css";
 
 function Projects() {
-  const projects = [
-    {
-      title: "Smart Airs",
-      image: "/project/smart.png",
-      description: "Smart Airs aims to provide a seamless and efficient solution for users to manage their taxes.",
-      tech: "React | ExpressJs",
-      link: "https://smartairs.tax/",
-    },
-    {
-      title: "Maxcoin",
-      image: "/project/max.png",
-      description: "MaxCoin is a web-based cryptocurrency platform designed to offer users an easy and secure way to trade and manage digital assets.",
-      tech: "ExpressJs | MySQL",
-      link: "https://support.maicoin.com/en/support/home",
-    },
-    {
-      title: "Pesrichi Brown website",
-      image: "/project/pesrichi.png",
-      description: "Pesrichi brown is a website for a tech supplying firm that sells various building interior fittings and cabinets.",
-      tech: "Wordpress",
-      link: "https://pesbrownrichi.org/",
-    },
-    {
-      title: "Crystal Land Academy",
-      image: "/project/crystal.png",
-      description: "Lendsqr is a loan management dashboard using React, designed to facilitate loan applications and track loan statuses.",
-      tech: "React | Expressjs| Mongodb | VPS hosting",
-      link: "http://crystallandacademy.com",
-    },
-    {
-      title: "CL3F Wilson",
-      image: "/project/cw.png",
-      description: "BabTech e-learning app, built with Firebase and React, offers a seamless online learning experience with tech courses.",
-      tech: "React | Firebase | Expressjs | Mysql",
-      link: "http://cl3fwilson.com",
-    },
-    {
-      title: "Resolve (on-going)",
-      image: "/project/resolve.png",
-      description: "Trust Market is a web app built with React and Node.js, offering dynamic product listings.",
-      tech: "Nextjs | Prisma | Postgres",
-      link: "https://resolve-web-app-dev.vercel.app/login",
-    },
-  ];
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  
+useEffect(() => {
+  const fetchProjects = async () => {
+    try {
+      setLoading(true);
+      const res = await axios.get("/api/projects");
+      setProjects(res.data);
+    } catch (err) {
+      setError("Failed to load projects: " + err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+  fetchProjects();
+}, []);
+
 
   return (
     <section id="projects" className="Block">
@@ -53,26 +29,53 @@ function Projects() {
         My Projects
       </h2>
 
-      <div className="projectGrid">
-        {projects.map((project, index) => (
-          <div key={index} className="projectCard">
-            <h3 className="projectTitle">{project.title}</h3>
-            <div className="projectImageWrapper">
-              <img src={project.image} alt={`${project.title} screenshot`} className="projectImage" />
+      {loading ? (
+        <div className="loading-container">
+          <div className="loading-spinner"></div>
+          <span>Loading projects...</span>
+        </div>
+      ) : error ? (
+        <p className="error-message">{error}</p>
+      ) : projects.length === 0 ? (
+        <p className="no-projects">No projects found</p>
+      ) : (
+        <div className="projectGrid">
+          {projects.map((project) => (
+            <div key={project._id || project.id} className="projectCard">
+              <h3 className="projectTitle">{project.title}</h3>
+              <div className="projectImageWrapper">
+                {project.image ? (
+                  <img
+                    src={project.image}
+                    alt={`${project.title} screenshot`}
+                    className="projectImage"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.parentNode.innerHTML = '<div class="image-error">Image failed to load</div>';
+                    }}
+                  />
+                ) : (
+                  <div className="image-placeholder">No Image</div>
+                )}
+              </div>
+              <p className="projectDesc">{project.description}</p>
+              <div className="projectTech">
+                {project.tech && Array.isArray(project.tech) && project.tech.map((tech, index) => (
+                  <span key={index} className="tech-tag">{tech}</span>
+                ))}
+              </div>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="projectLink"
+              >
+                View Project
+              </a>
             </div>
-            <p className="projectDesc">{project.description}</p>
-            <p className="projectTech">{project.tech}</p>
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noreferrer"
-              className="projectLink"
-            >
-              View
-            </a>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 }

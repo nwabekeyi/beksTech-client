@@ -1,0 +1,87 @@
+/* SignIn.css */
+.signin-container {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 40px;
+  background-color: #18181b; /* Matches projectCard */
+  border: 1px solid #27272a;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px #00000040;
+  color: #fff;
+  text-align: center;
+}
+
+.signin-container h1 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.error-message {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #ff4d4d;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #d4d4d8;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #3f3f46;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #0a0a0a;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #693def; /* Accent color */
+}
+
+.signin-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #693def;
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.signin-button:hover {
+  background-color: #5a2ed4;
+  transform: scale(1.02);
+}
+
+.signin-button:active {
+  background-color: #4a23b5;
+  transform: scale(0.98);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 500px) {
+  .signin-container {
+    margin: 60px 20px;
+    padding: 30px;
+  }
+}
