@@ -56,10 +56,29 @@
 }
 
 .projectTech {
-  font-size: 13px;
-  color: gray;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px; 
   margin-bottom: 12px;
 }
+
+.projectTech .tech-tag {
+  background-color: rgba(105, 61, 239, 0.15); 
+  color: #c4b5fd; 
+  border: 1px solid #693def; 
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.projectTech .tech-tag:hover {
+  background-color: #693def;
+  color: #fff;
+}
+
 
 .projectLink {
   color: #693def;
